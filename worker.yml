@@ -1,6 +1,6 @@
 coreos:
   etcd2:
-    discovery: <replace>
+    discovery: <your_discovery_url>
     listen-client-urls: http://0.0.0.0:2379,http://0.0.0.0:4001
     proxy: on
   fleet:
