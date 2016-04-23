@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Precheck cloud configs"
+
 if [ ! -d ".build" ]; then
   echo "Create .build directory"
   mkdir .build
