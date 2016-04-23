@@ -1,7 +1,9 @@
 #!/bin/sh
 
-echo "prepare files"
-mkdir .build
+if [ ! -d ".build" ]; then
+  echo "Create .build directory"
+  mkdir .build
+fi
 
 ETCD_DISCOVERY=$(curl -w "\n" 'https://discovery.etcd.io/new?size=3')
 
