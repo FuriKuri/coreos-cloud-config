@@ -7,12 +7,17 @@ if [ ! -d ".build" ]; then
   mkdir .build
 fi
 
-if [ ! -f ".build/service.yml"  ]; then
+if [ ! -f ".build/service.yml" || ! -f ".build/worker.yml"  ]; then
   echo "Remove old files"
 
-  rm .build/worker.yml
-  rm .build/service.yml
-  
+  if [ ! -f ".build/worker.yml"  ]; then
+    rm .build/worker.yml
+  fi
+
+  if [ ! -f ".build/service.yml"  ]; then
+    rm .build/service.yml
+  fi
+
   ETCD_DISCOVERY=$(curl -w "\n" 'https://discovery.etcd.io/new?size=3')
 
   echo "use $ETCD_DISCOVERY"
