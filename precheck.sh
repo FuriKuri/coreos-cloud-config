@@ -22,7 +22,7 @@ if [ ! -f ".build/service.yml" || ! -f ".build/worker.yml"  ]; then
 
   ETCD_DISCOVERY=$(curl -w "\n" 'https://discovery.etcd.io/new?size=3')
 
-  echo "use $ETCD_DISCOVERY"
+  echo "Use discovery url: $ETCD_DISCOVERY"
 
   sed "s%<your_discovery_url>%$ETCD_DISCOVERY%g" <worker.yml >.build/worker.yml
   sed "s%<your_discovery_url>%$ETCD_DISCOVERY%g" <service.yml >.build/service.yml
