@@ -26,4 +26,6 @@ if [ ! -f ".build/service.yml" || ! -f ".build/worker.yml"  ]; then
 
   sed "s%<your_discovery_url>%$ETCD_DISCOVERY%g" <worker.yml >.build/worker.yml
   sed "s%<your_discovery_url>%$ETCD_DISCOVERY%g" <service.yml >.build/service.yml
+
+  echo "New cloud configs created"
 fi
