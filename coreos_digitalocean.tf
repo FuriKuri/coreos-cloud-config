@@ -7,7 +7,7 @@ variable "service_count" {
 }
 
 variable "worker_count" {
-  default = 3
+  default = 5
 }
 
 provider "digitalocean" {
