@@ -1,3 +1,4 @@
+#cloud-config
 coreos:
   etcd2:
     discovery: <your_discovery_url>
